@@ -1,10 +1,15 @@
-import "./App.css";
-import logo from "./logo.png";
+import { matchRoutes } from "react-router";
+import { Footer } from "./components/footer/footer";
+import { NavigationTop } from "./components/navigation-top/navigation-top";
+import { LandingPage } from "./pages";
+import { StoreRoutes } from "./routes/index";
+// import { Link } from "react-router-dom";
+import "./styles/App.css";
 
 function App() {
   return (
     <div className="App">
-        <h2>started e commerce application in react</h2>
+          
     </div>
   );
 }
