@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import {LandingPage,CartPage,LoginPage,LogoutPage,ProductsPage,WishlistPage} from "../../pages/";
+import {LandingPage,CartPage,LoginPage,LogoutPage,ProductsPage,WishlistPage} from "../pages/";
 
 export default function StoreRoutes(){
     return(
