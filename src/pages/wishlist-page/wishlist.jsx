@@ -1,7 +1,5 @@
 export  default function WishlistPage(){
     return(
-        <div>
-            from WishlistPage
-        </div>
+        <h2>this is from WishlistPage</h2>
     )
 }

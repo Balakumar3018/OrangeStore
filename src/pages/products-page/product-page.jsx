@@ -1,7 +1,5 @@
 export default function ProductPage(){
     return(
-        <div>
-            from ProductPage
-        </div>
+        <h2>this is from ProductPage</h2>
     )
 }

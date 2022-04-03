@@ -1,5 +1,3 @@
 export default function CartPage(){
-    return(
-        <div>this s from CartPage</div>
-    )
+    return <h2>this is from cart</h2>
 }

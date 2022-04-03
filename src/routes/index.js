@@ -1,3 +1,3 @@
 import StoreRoutes from "./routes";
 
-export  { StoreRoutes };
+export   { StoreRoutes as Routes};
