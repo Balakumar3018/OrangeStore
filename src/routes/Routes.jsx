@@ -4,7 +4,7 @@ import {LandingPage,CartPage,LoginPage,LogoutPage,ProductsPage,WishlistPage} fro
 export default function StoreRoutes(){
     return(
         <Routes>
-            <Route path="/home" element={<LandingPage/>} />
+            <Route path="/" element={<LandingPage/>} />
             <Route path="/cart" element={<CartPage/>} />
             <Route path="/login" element={<LoginPage/>} />
             <Route path="/logout" element={<LogoutPage/>} />
