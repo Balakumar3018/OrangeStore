@@ -5,7 +5,7 @@ export default function LandingPage(){
     return(
         <div>
             <div className="landing-page-container">
-                <img className="landing-page-image" src={LandingPageImage} alt="landing-page-image"/>
+                <img className="landing-page-image" src={LandingPageImage} alt="landing-page"/>
                     <button className="landing-page-shopnow-button">shop now</button>
             </div>
             <h2 className="landing-page-text">Frequently purchased items</h2>
