@@ -5,7 +5,7 @@ export function NavigationTop(){
     return(
             <div className="navigation-bar">
                 <div className="nav-logo-LinkItems">
-                    <Link to="/home"><img className="image-logo" src={OrangeStoreLogo} /> </Link>
+                    <Link to="/home"><img className="image-logo" src={OrangeStoreLogo} alt="orangeStore-logo" /> </Link>
                     <Link to="/home" className="text-logo">Home</Link>
                     <Link to="/products" className="text-logo">Shop now</Link>
                 </div>
