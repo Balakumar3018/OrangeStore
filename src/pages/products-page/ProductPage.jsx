@@ -1,6 +1,7 @@
 import "./product.css";
 import { useState, useEffect,useReducer } from "react";
 import axios from "axios";
+import {ProductList} from "../../components/ProductList/ProductList"
 
 export default function ProductPage(){
         const [products,setProducts]=useState([])
@@ -11,8 +12,6 @@ export default function ProductPage(){
             };
             fetchProducts();
           }, []);
-
-          //use reducer functions
           const ProductReducerFunction=(state,action)=>{
             switch(action.type){
                 case "sort":
@@ -20,7 +19,7 @@ export default function ProductPage(){
                 case "rating":
                     return {...state, rating:action.payload} 
                 case "category":
-                    return {...state, category:action.payload}    
+                    return {...state, Showcategory:action.payload}    
                 case "clear":
                     return {
                         sortby:"null",
@@ -31,7 +30,6 @@ export default function ProductPage(){
             }
           }
           
-          //filter functions
           const getSortedProducts=(products,sortby)=>{
               if(sortby==="PriceLowToHigh"){
                   return products.sort((a,b)=> a.price - b.price);
@@ -53,32 +51,30 @@ export default function ProductPage(){
               }
               return products;
           }
-          const getFinalFilteredProducts=(products,category)=>{
-              if(category==="All"){
-                  
+          const getFinalFilteredProducts=(products,Showcategory)=>{
+              if(Showcategory==="All"){
                   return products;
               }
-              if(category==="iPhone"){
+              if(Showcategory==="iPhone"){
                   return products.filter((item)=> item.categoryName==="iPhone")
               }
-              if(category==="Android"){
+              if(Showcategory==="Android"){
                 return products.filter((item)=> item.categoryName==="Android")
               }
-              if(category==="Keypad"){
+              if(Showcategory==="Keypad"){
                 return products.filter((item)=> item.categoryName==="keypad")
               }
             return products;
           }
-          //init variables
-          const [{sortby,rating,category},dispatch]=useReducer(ProductReducerFunction,
+          const [{sortby,rating,Showcategory},dispatch]=useReducer(ProductReducerFunction,
             {sortby:"null",
             rating:"null",
-            category:"All"
+            Showcategory:"All"
             });
           
           const sortedProducts=getSortedProducts(products,sortby);
           const ratingSortedProducts=getRatingSortedProducts(sortedProducts,rating);
-          const FinalFilteredProducts=getFinalFilteredProducts(ratingSortedProducts,category)
+          const FinalFilteredProducts=getFinalFilteredProducts(ratingSortedProducts,Showcategory)
 
     return(
         <div className="product-page-container">
@@ -92,28 +88,28 @@ export default function ProductPage(){
                         <label  className="category">
                             <input type="checkbox" className="category1" name="category1"
                             onChange={()=>dispatch({type:"category", payload:"All"})}
-                            checked={category==="All"}
+                            checked={Showcategory==="All"}
                             />
                             All
                         </label>
                         <label  className="category">
                             <input type="checkbox" className="category2" name="category2"
                             onChange={()=>dispatch({type:"category", payload:"iPhone"})}
-                            checked={category==="iPhone"}
+                            checked={Showcategory==="iPhone"}
                             />
                             iPhone
                         </label>
                         <label  className="category">
                             <input type="checkbox" className="category3" name="category3"
                             onChange={()=>dispatch({type:"category", payload:"Android"})}
-                            checked={category==="Android"}
+                            checked={Showcategory==="Android"}
                             />
                             Android
                         </label>
                         <label  className="category">
                             <input type="checkbox" className="category4" name="category4"
                             onChange={()=>dispatch({type:"category", payload:"Keypad"})}
-                            checked={category==="Keypad"}
+                            checked={Showcategory==="Keypad"}
                             />
                             Keypad
                         </label>
@@ -160,28 +156,7 @@ export default function ProductPage(){
                         </label>
                 </div>
             </div>
-            <div className="product-list">
-        <div className="product-cards">{
-            FinalFilteredProducts.map((item)=> (
-            <div className="basic-card " key={item.productName}> 
-                <img src={item.displayImg} width="100%" height="270px" alt={item.productName} />
-                <div className="product-details">
-                    <div className="product-name">{item.productName}</div>
-                    <div>RAM: {item.RAM}</div>
-                    <div>Price: {item.price}</div>
-                    <div>Rating: {item.rating}</div>
-                    {/* {item.inStock && <div >Instock</div>} */}
-                    {/* {!item.inStock && <div>Out of stock</div>} */}
-                </div>
-                <div className="card-buttons">
-                    <button className="btn btn-primary">Add to cart</button>
-                    <button className="btn btn-secondary">Add to wishlist</button>
-                </div>
-            </div>    
-            ) )
-        }
-        </div>
-        </div>
+            <ProductList products={FinalFilteredProducts}/>
         </div>
     )
 }   

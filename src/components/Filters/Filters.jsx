@@ -2,7 +2,5 @@
 import "./Filters.css";
 
 export  function Filters(){
-    return(
-        
-    )
+    return
 }
