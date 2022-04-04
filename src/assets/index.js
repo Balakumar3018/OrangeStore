@@ -4,7 +4,7 @@ import Iphone13ProImage from "./images/phones-images/iphone13Pro.jpg";
 import Iphone13Image from "./images/phones-images/iphone13.jpg";
 import Iphone13miniImage from "./images/phones-images/iphone13mini.jpg";
 import IphoneSEImage from "./images/phones-images/iphoneSEImage.jpg";
-import SamsungS21UltraImage from "./images/phones-images/samsungS21-ultra.jpg";
+import SamsungS21UltraImage from "./images/phones-images/samsungS21ultra.jpg";
 import SamsungGalaxyZFoldImage from "./images/phones-images/samsungGalaxyZFold.jpg";
 import SamsungGalaxyM21Image from "./images/phones-images/samsungM21.jpg";
 import SamsungGalaxyM52Image from "./images/phones-images/samsungM52.jpg";
