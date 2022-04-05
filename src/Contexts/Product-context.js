@@ -2,7 +2,7 @@ import {useContext,createContext,useReducer} from "react";
 import { ProductReducerFunction } from "../ReducerFunctions/ProductReducerFunction";
 const ProductContext=createContext();
 
-const ProductProvider=({Children})=>{
+const ProductProvider=({children})=>{
     const [state,dispatch]=useReducer(ProductReducerFunction,
         {sortby:"null",
         rating:"null",
@@ -10,7 +10,7 @@ const ProductProvider=({Children})=>{
         });
     return (
         <ProductContext.Provider value={{state,dispatch}}>
-            {Children}
+            {children}
         </ProductContext.Provider>
     )
 }
