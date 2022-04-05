@@ -1,7 +1,11 @@
 import "./navigation-top.css";
 import { OrangeStoreLogo } from "../../assets"
 import { Link } from "react-router-dom";
+import { useCart } from "../../Contexts/Cart-context";
+
 export function NavigationTop(){
+
+    const {cartState}=useCart();
     return(
             <div className="navigation-bar">
                 <div className="nav-logo-LinkItems">
@@ -19,7 +23,7 @@ export function NavigationTop(){
                     </Link>
                     <Link to="/cart"  className="cart-icon">
                         <i className="fa-solid fa-cart-shopping fa-lg"></i>
-                        <span className="cart-badge "></span>
+                        <span className="cart-badge ">{cartState.cart.length}</span>
                     </Link>
                     <Link to="/login">
                         <button class="btn btn-primary">Account</button>
