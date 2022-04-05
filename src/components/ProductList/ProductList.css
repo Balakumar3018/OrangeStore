@@ -1,6 +1,5 @@
 .product-page-container{
     display: flex;
-    
 }
 
 .product-list{
@@ -21,7 +20,7 @@
 .basic-card{
     border:"1px solid black";
     margin:8px;
-    width:200px;
+    width:230px;
     padding:8px;
     height:380px;
 }
