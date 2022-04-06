@@ -1,0 +1,13 @@
+.total-price-card{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 1px 4px var(--secondary-color);
+    border-radius: 5px;
+    padding: 16px;
+    background-color: var(--background-colorWhite);
+}
+.price-details{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--secondary-color);;
+}

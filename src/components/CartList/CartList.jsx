@@ -1,3 +1,4 @@
+import { useCart } from "../../Contexts/Cart-context";
 import "./CartList.css"
 
 const  CartList=({product})=>{
@@ -5,8 +6,9 @@ const  CartList=({product})=>{
            _id,productName,
         brand,RAM,price,rating,
         reviews,tag,inStock,
-        displayImg,categoryName} =product;
-        console.log(product);
+        displayImg,quantity,categoryName} =product;
+
+     const {cartState,cartDispatch}=useCart();   
     return (
         <div className="cart-page-list">
             <div className="horizontal-card">
@@ -20,17 +22,23 @@ const  CartList=({product})=>{
                     <p>Rs. {price} </p> 
                 </div>
                 <div className="quantity-buttons">
-                    <button class="btn btn-icon btn-minus">
+                    <button class="btn btn-icon btn-minus" 
+                       onClick={()=>cartDispatch({type:"Decrease_Quantity",payload: _id})}
+                    >
                         <i class="fa-solid fa-minus"></i>
                     </button>
-                    <button className="btn  quantityCount">1</button>
-                    <button class="btn btn-icon btn-plus">
-                    <i class="fa-solid fa-plus"></i>
+                    <button className="btn  quantityCount">{quantity}</button>
+                    <button class="btn btn-icon btn-plus"
+                    onClick={()=>cartDispatch({type:"Increase_Quantity",payload: _id})}
+                    >
+                        <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
                 <div className="card-buttons horizontal-card-buttons">
                     <button className="btn btn-primary">Move to Wishlist</button>
-                    <button className="btn btn-secondary">Remove from cart</button>
+                    <button className="btn btn-secondary"
+                        onClick={()=>cartDispatch({type:"RemoveFromCart", payload:_id})}
+                    >Remove from cart</button>
                 </div>
                 </div>
             </div>

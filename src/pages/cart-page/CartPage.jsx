@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom"
 import { useCart } from "../../Contexts/Cart-context"
 import {CartList} from "../../components/CartList/CartList"
+import {CartPrice} from "../../components/CartPrice/CartPrice";
+import "./cart-page.css";
+
 export default function CartPage(){
 
     const {cartState} =useCart();
     return (
         <div className="cartPage-container">
-            <div>
+            <div className="cart-list">
                 {
                     cartState.cart.length > 0 ? (
                         cartState.cart.map((item)=>{
-                            console.log(item)
                             return <CartList product={item} key={item._id} />
                         })
                     ):(
@@ -21,6 +23,7 @@ export default function CartPage(){
                     )
                 }
             </div>
+            <CartPrice/>  
         </div>
     )
 }

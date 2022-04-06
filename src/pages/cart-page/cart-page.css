@@ -1,0 +1,10 @@
+.cartPage-container{
+    display: flex;
+    justify-content: space-evenly;
+    padding:24px 24px 140px;  
+}
+.cart-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

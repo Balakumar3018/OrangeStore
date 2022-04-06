@@ -1,9 +1,8 @@
 const CartReducerFunction=(cartState,{type,payload})=>{
     switch(type){
         case "AddToCart":
-            console.log("working")
             return {...cartState, 
-                    cart: [...cartState.cart, { ...payload, quantity: 0 }],}
+                    cart: [...cartState.cart, { ...payload, quantity: 1 }],}
 
         case "RemoveFromCart":
             return {
