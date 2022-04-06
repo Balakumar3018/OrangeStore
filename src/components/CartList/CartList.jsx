@@ -2,13 +2,9 @@ import { useCart } from "../../Contexts/Cart-context";
 import "./CartList.css"
 
 const  CartList=({product})=>{
-      const {
-           _id,productName,
-        brand,RAM,price,rating,
-        reviews,tag,inStock,
-        displayImg,quantity,categoryName} =product;
-
-     const {cartState,cartDispatch}=useCart();   
+      const {_id,productName,RAM,price,displayImg,quantity} =product;
+      const {cartDispatch}=useCart();   
+      
     return (
         <div className="cart-page-list">
             <div className="horizontal-card">

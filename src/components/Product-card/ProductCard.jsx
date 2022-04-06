@@ -4,11 +4,8 @@ import "./ProductCard.css"
 
 export const ProductCard=({product})=>{
     const {
-        _id,productName,
-     brand,RAM,price,rating,
-     reviews,tag,inStock,
-     displayImg,categoryName} =product;
-    const {cartState,cartDispatch}=useCart();
+        _id,productName,RAM,price,rating,displayImg} =product;
+        const {cartState,cartDispatch}=useCart();
     return(
             <div className="basic-card " key={productName}> 
                 <img src={displayImg} width="100%" height="270px" alt={productName} />
