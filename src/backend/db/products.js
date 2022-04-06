@@ -22,6 +22,7 @@ export const products = [
     tag:"new",
     inStock: true,
     displayImg:Iphone13ProImage,
+    quantity:"1",
     categoryName: "iPhone"
   },
   {
@@ -35,6 +36,7 @@ export const products = [
     tag:"new",
     inStock: false,
     displayImg:Iphone13Image,
+    quantity:"1",
     categoryName: "iPhone"
   },
   {
@@ -48,6 +50,7 @@ export const products = [
     tag:"old",
     inStock: true,
     displayImg:Iphone13miniImage,
+    quantity:"1",
     categoryName: "iPhone"
   },
   {
@@ -61,6 +64,7 @@ export const products = [
     tag:"old",
     inStock: true,
     displayImg:IphoneSEImage,
+    quantity:"1",
     categoryName: "iPhone"
   },
   {
@@ -74,6 +78,7 @@ export const products = [
     tag:"new",
     inStock: false,
     displayImg:SamsungS21UltraImage,
+    quantity:"1",
     categoryName: "Android"
   },
   {
@@ -87,6 +92,7 @@ export const products = [
     tag:"new",
     inStock: true,
     displayImg:SamsungGalaxyZFoldImage,
+    quantity:"1",
     categoryName: "Android"
   },
   {
@@ -100,6 +106,7 @@ export const products = [
     tag:"new",
     inStock: true,
     displayImg:SamsungGalaxyM21Image,
+    quantity:"1",
     categoryName: "Android"
   },
   {
@@ -113,6 +120,7 @@ export const products = [
     tag:"new",
     inStock: true,
     displayImg:SamsungGalaxyM52Image,
+    quantity:"1",
     categoryName: "Android"
   },
   {
@@ -126,6 +134,7 @@ export const products = [
     tag:"new",
     inStock: false,
     displayImg:Oneplus10ProImage,
+    quantity:"1",
     categoryName: "Android"
   },
   {
@@ -139,6 +148,7 @@ export const products = [
     tag:"old",
     inStock: true,
     displayImg:Oneplus9ProImage,
+    quantity:"1",
     categoryName: "Android"
   },
   {
@@ -152,6 +162,7 @@ export const products = [
     tag:"old",
     inStock: true,
     displayImg:OneplusNordImage,
+    quantity:"1",
     categoryName: "Android"
   },
   {
@@ -165,6 +176,7 @@ export const products = [
     tag:"new",
     inStock: true,
     displayImg:OneplusNord2Image,
+    quantity:"1",
     categoryName: "Android"
   },
   {
@@ -178,6 +190,7 @@ export const products = [
     tag:"new",
     inStock: false,
     displayImg:Googlepixel6ProImage,
+    quantity:"1",
     categoryName: "Android",
   },
   {
@@ -191,6 +204,7 @@ export const products = [
     tag:"new",
     inStock: true,
     displayImg:Googlepixel6Image,
+    quantity:"1",
     categoryName: "Android",
   },
   {
@@ -204,6 +218,7 @@ export const products = [
     tag:"old",
     inStock: true,
     displayImg:Googlepixel4Image,
+    quantity:"1",
     categoryName: "Android",
   },
   {
@@ -217,6 +232,7 @@ export const products = [
     tag:"old",
     inStock: false,
     displayImg:Googlepixel3aImage,
+    quantity:"1",
     categoryName: "Android",
   },
   {
@@ -230,6 +246,7 @@ export const products = [
     tag:"new",
     inStock: true,
     displayImg:Nokia105Image,
+    quantity:"1",
     categoryName: "keypad",
   },
   {
@@ -243,6 +260,7 @@ export const products = [
     tag:"old",
     inStock: true,
     displayImg:Nokia150Image,
+    quantity:"1",
     categoryName: "keypad",
   },
   {
@@ -256,6 +274,7 @@ export const products = [
     tag:"new",
     inStock: false,
     displayImg:Nokia5310Image,
+    quantity:"1",
     categoryName: "keypad"
   }
 ];
