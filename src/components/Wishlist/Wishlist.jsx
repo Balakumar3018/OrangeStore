@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../../Contexts/Cart-context";
 import { useWishlist } from "../../Contexts/Wishlist-context"
-import "./ProductCard.css";
 
-export const ProductCard=({product})=>{
-        const {_id,productName,RAM,price,rating,displayImg} =product;
-        const {cartState,cartDispatch}=useCart();
-        const {wishlistState,wishlistDispatch}=useWishlist();
+export const WishListCard=({product})=>{
+    const {_id,productName,RAM,price,rating,displayImg} =product;
+    const {wishlistDispatch}=useWishlist();
+    const {cartState,cartDispatch}=useCart();
     return(
-            <div className="basic-card " key={productName}> 
+        <div className="basic-card " key={productName}> 
                 <img src={displayImg} width="100%" height="270px" alt={productName} />
                 <div className="product-details">
                     <div className="product-name">{productName}</div>
@@ -26,22 +25,14 @@ export const ProductCard=({product})=>{
                     ) : (
                         <button className="btn btn-primary"
                         onClick={()=>cartDispatch({type:"AddToCart",payload:product})}>
-                            Add to cart
+                            Move to cart
                         </button>
                     ) }
-                    {
-                        wishlistState.wishlist.find((item) => item._id === _id) ? (
-                                <button className="btn btn-secondary"
-                                onClick={()=>wishlistDispatch({type:"RemoveFromWishlist",payload:_id})}>
-                                    Remove wishlist
-                                </button>
-                            ) : (
-                                <button className="btn btn-secondary"
-                                onClick={()=>wishlistDispatch({type:"AddToWishlist",payload:product})}>
-                                    Add to wishlist
-                                </button>
-                            )
-                    }
+                        <button className="btn btn-secondary"
+                            onClick={()=>wishlistDispatch({type:"RemoveFromWishlist",payload:_id})}>
+                                Remove from wishlist
+                        </button>
+                           
                 </div>
             </div>    
     )
