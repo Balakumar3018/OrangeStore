@@ -1,7 +1,7 @@
-<h1>1.Orange-UI</h1>
+<h1>OrangeStore</h1>
 <p>OrangeStore is a ecommerce applciation for mobile phones</p>
 
-<h1>2.Features</h1> 
+<h1>Features</h1> 
   <p>Home page</p>
   <p>Product page with products</p>
   <p>Filter functionality</p>
