@@ -1,0 +1,19 @@
+.login-card{
+    border: 1px  var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    background-color: var(--background-colorWhite);
+    padding: 52px;
+    height: 380px;
+    box-shadow: 0px 2px 6px var(--secondary-color);
+    border-radius: 4px;
+}
+.login-page{
+    display:flex;
+    justify-content: center;
+    padding: 16px;
+}
