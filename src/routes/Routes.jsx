@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import {LandingPage,CartPage,LoginPage,LogoutPage,ProductsPage,WishlistPage} from "../pages/";
+import {LandingPage,CartPage,LoginPage,SignupPage,ProductsPage,WishlistPage} from "../pages/";
 
 export default function StoreRoutes(){
     return(
@@ -7,7 +7,7 @@ export default function StoreRoutes(){
             <Route path="/" element={<LandingPage/>} />
             <Route path="/cart" element={<CartPage/>} />
             <Route path="/login" element={<LoginPage/>} />
-            <Route path="/logout" element={<LogoutPage/>} />
+            <Route path="/signup" element={<SignupPage/>} />
             <Route path="/products" element={<ProductsPage/>} />
             <Route path="/wishlist" element={<WishlistPage/>} />
         </Routes>
