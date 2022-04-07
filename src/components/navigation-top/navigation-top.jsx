@@ -2,10 +2,12 @@ import "./navigation-top.css";
 import { OrangeStoreLogo } from "../../assets"
 import { Link } from "react-router-dom";
 import { useCart } from "../../Contexts/Cart-context";
+import { useWishlist } from "../../Contexts/Wishlist-context";
 
 export function NavigationTop(){
 
     const {cartState}=useCart();
+    const {wishlistState}=useWishlist();
     return(
             <div className="navigation-bar">
                 <div className="nav-logo-LinkItems">
@@ -19,11 +21,11 @@ export function NavigationTop(){
                     </div>
                     <Link to="/wishlist" className="heart-icon">
                         <i className="fa-solid fa-heart"></i>
-                        <span className="heart-badge"></span>
+                        <span className="heart-badge">{wishlistState.wishlist.length >0 ? wishlistState.wishlist.length : ''}</span>
                     </Link>
                     <Link to="/cart"  className="cart-icon">
                         <i className="fa-solid fa-cart-shopping fa-lg"></i>
-                        <span className="cart-badge ">{cartState.cart.length}</span>
+                        <span className="cart-badge ">{cartState.cart.length >0 ? cartState.cart.length : '' }</span>
                     </Link>
                     <Link to="/login">
                         <button class="btn btn-primary">Account</button>

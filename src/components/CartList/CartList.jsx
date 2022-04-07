@@ -1,9 +1,12 @@
 import { useCart } from "../../Contexts/Cart-context";
+import { useWishlist } from "../../Contexts/Wishlist-context";
+import { Link } from "react-router-dom";
 import "./CartList.css"
 
 const  CartList=({product})=>{
       const {_id,productName,RAM,price,displayImg,quantity} =product;
-      const {cartDispatch}=useCart();   
+      const {cartDispatch}=useCart(); 
+      const {wishlistState,wishlistDispatch}=useWishlist();
       
     return (
         <div className="cart-page-list">
@@ -30,8 +33,21 @@ const  CartList=({product})=>{
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
-                <div className="card-buttons horizontal-card-buttons">
-                    <button className="btn btn-primary">Move to Wishlist</button>
+                <div className="card-buttons horizontal-card-buttons">{
+                    wishlistState.wishlist.find((item) => item._id === _id) ? (
+                        <Link to="/wishlist">
+                          <button className="btn btn-primary">
+                            Go to wishlist
+                          </button>
+                        </Link>
+                      ) :(
+                        <button className="btn btn-primary"
+                        onClick={()=>wishlistDispatch({type:"AddToWishlist",payload:product})}>
+                            Move to Wishlist
+                        </button>
+                      )
+                }
+                    
                     <button className="btn btn-secondary"
                         onClick={()=>cartDispatch({type:"RemoveFromCart", payload:_id})}
                     >Remove from cart</button>
