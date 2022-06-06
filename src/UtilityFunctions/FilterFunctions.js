@@ -19,23 +19,35 @@ const getRatingSortedProducts=(products,rating)=>{
     }
     return products;
 }
-const getFinalFilteredProducts=(products,Showcategory)=>{
-    if(Showcategory==="All"){
-        return products;
+const getCategoryFilteredProducts=(products,iPhone,Android,Keypad)=>{
+    const categoryFiltered=[];
+    if(iPhone===true &&Android ===true && Keypad===true )
+      return products;
+
+    if(!iPhone){
+      let newProducts=products.filter((item)=>"iPhone"===  item.categoryName);
+      categoryFiltered.push(...newProducts);
     }
-    if(Showcategory==="iPhone"){
-        return products.filter((item)=> item.categoryName==="iPhone")
+   
+    if(!Android){
+      let newProducts=products.filter((item)=> "Android"=== item.categoryName );
+      categoryFiltered.push(...newProducts);
     }
-    if(Showcategory==="Android"){
-      return products.filter((item)=> item.categoryName==="Android")
+
+    if(!Keypad){
+      let newProducts=products.filter((item)=>"keypad" === item.categoryName);
+      categoryFiltered.push(...newProducts);
     }
-    if(Showcategory==="Keypad"){
-      return products.filter((item)=> item.categoryName==="keypad")
-    }
-  return products;
+  
+    return categoryFiltered;
+}
+const getPriceSortedProducts=(products,price)=>{
+  return products.filter((item)=>item.price >= price)
 }
 
-export {getFinalFilteredProducts,
+export {  
+    getCategoryFilteredProducts,
     getRatingSortedProducts,
-    getSortedProducts
+    getSortedProducts,
+    getPriceSortedProducts
 };
