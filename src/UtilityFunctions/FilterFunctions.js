@@ -42,7 +42,7 @@ const getCategoryFilteredProducts=(products,iPhone,Android,Keypad)=>{
     return categoryFiltered;
 }
 const getPriceSortedProducts=(products,price)=>{
-  return products.filter((item)=>item.price>=price)
+  return products.filter((item)=>item.price >= price)
 }
 
 export {  
