@@ -1,13 +1,20 @@
 import {useContext,createContext,useReducer} from "react";
-import { ProductReducerFunction } from "../ReducerFunctions/ProductReducerFunction";
+import { ProductReducerFunction } from "../Reducers/ProductReducerFunction";
 const ProductContext=createContext();
 
 const ProductProvider=({children})=>{
     const [state,dispatch]=useReducer(ProductReducerFunction,
-        {sortby:"null",
+        {
+        categories:{
+            iPhone: false,
+            Android:false,
+            Keypad: false
+        },
+        sortby:"null",
         rating:"null",
-        Showcategory:"All"
-        });
+        price:1000
+    });
+
     return (
         <ProductContext.Provider value={{state,dispatch}}>
             {children}

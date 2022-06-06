@@ -2,7 +2,8 @@ import "./Filters.css";
 import { useProduct } from "../../Contexts/Product-context";
 export  const Filters=()=>{
     const {state,dispatch}=useProduct();
-    const {sortby,rating,Showcategory}=state;
+    const {sortby,rating,categories,price}=state;
+    const {iPhone,Android,Keypad}=categories;
 
     return(
         <div className="product-sidebar">
@@ -10,33 +11,40 @@ export  const Filters=()=>{
                     <p className="filter-text ">Filters</p>
                     <p className="filter-clear" onClick={()=>dispatch({type:"clear"})}>Clear filters</p>
                 </div>
+                <h3 className="filter-text">Price filter</h3>
+                <p className="filter-text">Price: ₹{price}</p>
+                <input
+                    className="slider"
+                    type="range"
+                    list="tickmarks"
+                    step="37000"
+                    value={price}
+                    min="1000"
+                    max="149000"
+                    onChange={(e) =>
+                        dispatch({ type: "Price", price_value: e.target.value })
+                    }
+                />
                 <h3 className="filter-text">Category</h3>
                 <div className="category-container">
                         <label  className="category">
-                            <input type="checkbox" className="category1" name="category1"
-                            onChange={()=>dispatch({type:"category", payload:"All"})}
-                            checked={Showcategory==="All"}
-                            />
-                            All
-                        </label>
-                        <label  className="category">
                             <input type="checkbox" className="category2" name="category2"
-                            onChange={()=>dispatch({type:"category", payload:"iPhone"})}
-                            checked={Showcategory==="iPhone"}
+                            checked={iPhone}
+                            onChange={()=>dispatch({type:"iPhone"})}
                             />
                             iPhone
                         </label>
                         <label  className="category">
                             <input type="checkbox" className="category3" name="category3"
-                            onChange={()=>dispatch({type:"category", payload:"Android"})}
-                            checked={Showcategory==="Android"}
+                            checked={Android}
+                            onChange={()=>dispatch({type:"Android"})}
                             />
                             Android
                         </label>
                         <label  className="category">
                             <input type="checkbox" className="category4" name="category4"
-                            onChange={()=>dispatch({type:"category", payload:"Keypad"})}
-                            checked={Showcategory==="Keypad"}
+                            checked={Keypad}
+                            onChange={()=>dispatch({type:"Keypad"})}
                             />
                             Keypad
                         </label>
